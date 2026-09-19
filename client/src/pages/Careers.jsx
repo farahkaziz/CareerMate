@@ -17,7 +17,7 @@ export default function Careers() {
     setError('')
 
     try {
-      const res = await fetch(`/api/careers/search?source=esco&query=${encodeURIComponent(search)}`)
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/careers/search?source=esco&query=${encodeURIComponent(search)}`)
       if (!res.ok) {
         throw new Error('Network response was not ok')
       }

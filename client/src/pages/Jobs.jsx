@@ -26,7 +26,7 @@ export default function Jobs() {
     setCount(0)
 
     try {
-      const res = await fetch(`/api/jobs?query=${encodeURIComponent(search)}`)
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/jobs?query=${encodeURIComponent(search)}`)
       if (!res.ok) throw new Error('Network response was not ok')
       const data = await res.json()
       if (data && data.success) {
